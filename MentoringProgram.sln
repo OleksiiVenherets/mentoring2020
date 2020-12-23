@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mentoring  Program", "Mentoring  Program\Mentoring  Program.csproj", "{7E9EB64B-1382-4BF8-9842-97B3EA10A440}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MentoringProgram", "Mentoring  Program\MentoringProgram.csproj", "{D0D7F986-ECF4-4C48-B43C-2485B12AB9A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7E9EB64B-1382-4BF8-9842-97B3EA10A440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7E9EB64B-1382-4BF8-9842-97B3EA10A440}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7E9EB64B-1382-4BF8-9842-97B3EA10A440}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7E9EB64B-1382-4BF8-9842-97B3EA10A440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D7F986-ECF4-4C48-B43C-2485B12AB9A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D7F986-ECF4-4C48-B43C-2485B12AB9A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D7F986-ECF4-4C48-B43C-2485B12AB9A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D7F986-ECF4-4C48-B43C-2485B12AB9A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E994CE6E-D95D-4F5D-A7A0-38C40C2BA514}
+		SolutionGuid = {16B0D9C4-92D0-4F28-BA99-C55909DA3E4C}
 	EndGlobalSection
 EndGlobal

@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Mentoring_Program.Middleware
+namespace MentoringProgram.Middleware
 {
     public class LogRequestMiddleware
     {

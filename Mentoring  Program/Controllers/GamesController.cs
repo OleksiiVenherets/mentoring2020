@@ -1,65 +1,85 @@
-﻿using Mentoring_Program.Models;
+﻿using MentoringProgram.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Swashbuckle.AspNetCore.Annotations;
-using System.Net;
+using System;
+using System.Collections.Generic;
 
-namespace Mentoring_Program.Controllers
+namespace MentoringProgram.Controllers
 {
-    [ApiController]
-    [ApiVersion("1.0")]
-    [ApiExplorerSettings(GroupName = "v1")]
-    [Route("api/v{api-version:apiVersion}/games")]
-    [Produces("application/json")]
-    public class GamesController : ControllerBase
+    public class GamesController : Controller
     {
-        [SwaggerOperation("GetAllGames")]
-        [SwaggerResponse((int)HttpStatusCode.OK)]
-        [SwaggerResponse((int)HttpStatusCode.NotFound)]
-        [HttpGet("getallgames")]
-        public IActionResult GetAllGames()
+        public ActionResult Index()
         {
-            return Ok();
+            return View(new List<GameViewModel> { new GameViewModel { Id = 1, Description = "Free to play MOBA", Developer = "Valve", Publisher = "Steam Corporation", Name = "Dota 2", ReleaseDate = new DateTime(2011, 06, 01) } });
         }
 
-        [HttpGet("getgame/{id}", Name = nameof(GetGame))]
-        [SwaggerOperation("GetGame")]
-        [SwaggerResponse((int)HttpStatusCode.OK)]
-        [SwaggerResponse((int)HttpStatusCode.NotFound)]
-        public IActionResult GetGame([FromRoute]int id)
+        // GET: GamesController/Details/5
+        public ActionResult Details(int id)
         {
-            return Ok();
+            return View();
         }
 
-        [HttpPost("postgame")]
-        [SwaggerOperation("PostGame")]
-        [SwaggerResponse((int)HttpStatusCode.OK)]
-        [SwaggerResponse((int)HttpStatusCode.NotFound)]
-        [SwaggerResponse((int)HttpStatusCode.Created)]
-        public IActionResult PostGame([FromBody] Game game)
+        // GET: GamesController/Create
+        public ActionResult Create()
         {
-            return CreatedAtAction(
-                "GetGame",
-                new { id = 1 },
-                new Game()
-            );
+            return View();
         }
 
-        [HttpPut("putgame/{id}")]
-        [SwaggerOperation("PutGame")]
-        [SwaggerResponse((int)HttpStatusCode.OK)]
-        [SwaggerResponse((int)HttpStatusCode.NotFound)]
-        public IActionResult PutGame([FromRoute] int id, [FromBody] Game game)
+        // POST: GamesController/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(IFormCollection collection)
         {
-            return NoContent();
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
 
-        [HttpDelete("deletegame/{id}")]
-        [SwaggerOperation("DeleteGame")]
-        [SwaggerResponse((int)HttpStatusCode.OK)]
-        [SwaggerResponse((int)HttpStatusCode.NotFound)]
-        public ActionResult<Game> DeleteGame([FromRoute] int id)
+        // GET: GamesController/Edit/5
+        public ActionResult Edit(int id)
         {
-            return new Game();
+            return View();
+        }
+
+        // POST: GamesController/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        // GET: GamesController/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View();
+        }
+
+        // POST: GamesController/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, IFormCollection collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }

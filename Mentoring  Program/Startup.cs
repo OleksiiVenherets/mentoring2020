@@ -1,4 +1,4 @@
-using Mentoring_Program.Middleware;
+using MentoringProgram.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
-namespace Mentoring__Program
+namespace MentoringProgram
 {
     public class Startup
     {
@@ -23,6 +23,7 @@ namespace Mentoring__Program
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddControllersWithViews();
             services.AddLogging();
             services.AddCors();
             services.AddSwaggerGen(config =>
@@ -44,6 +45,9 @@ namespace Mentoring__Program
                 config.ReportApiVersions = true;
                 config.ApiVersionReader = new UrlSegmentApiVersionReader();
             });
+
+            services.AddMvc();
+            //services.AddMvcCore();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,6 +78,9 @@ namespace Mentoring__Program
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
             app.UseMiddleware<LogRequestMiddleware>();
