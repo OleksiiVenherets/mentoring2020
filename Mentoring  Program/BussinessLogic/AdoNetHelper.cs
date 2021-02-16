@@ -135,7 +135,7 @@ namespace MentoringProgram.BussinessLogic
                     }
                 }
                 
-                string sql = $"INSERT INTO Game (Name, Description, SystemRequirenments, Genres, InterfaceLanguages, FullSupportLanguage, ReleaseDate, IsFreeToPLay, Price, DeveloperID, PublisherID) VALUES (@Name, @Description, @SystemRequirenments, @Genres, @InterfaceLanguages, @FullSupportLanguage, @ReleaseDate, @IsFreeToPLay, @IsFreeToPLay, @Price, @CreatorID, @PublisherID";
+                string sql = $"INSERT INTO Game (Name, Description, SystemRequirenments, Genres, InterfaceLanguages, FullSupportLanguage, ReleaseDate, IsFreeToPLay, Price, DeveloperID, PublisherID) VALUES (@Name, @Description, @SystemRequirenments, @Genres, @InterfaceLanguages, @FullSupportLanguage, @ReleaseDate, @IsFreeToPLay, @Price, @CreatorID, @PublisherID";
 
                 var command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@Name", game.Name);
