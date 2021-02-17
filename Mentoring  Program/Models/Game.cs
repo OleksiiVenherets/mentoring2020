@@ -7,9 +7,11 @@ namespace MentoringProgram.Models
 {
     public class Game
     {
+        public int Id { get; set; }
+
         public string Name { get; set; }
 
-        public DateTime? ReleaseDate { get; set; }
+        public string ReleaseDate { get; set; }
 
         public List<string> Genres { get; set; }
 
